@@ -13,5 +13,5 @@ variable "instance_type" {
 variable "instance_key_pair" {
   description = "EC2 Key Pair"
   type        = string
-  default     = "terraform-key"
+  default     = "test"
 }
