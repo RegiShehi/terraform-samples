@@ -15,3 +15,19 @@ variable "instance_key_pair" {
   type        = string
   default     = "test"
 }
+
+# variable "instance_type_list" {
+#   description = "EC2 Instance Type"
+#   type        = list(string)
+#   default     = ["t2.micro", "t2.small"]
+# }
+
+# variable "instance_type_map" {
+#   description = "EC2 Instance Type"
+#   type        = map(string)
+#   default = {
+#     "dev"  = "t2.micro"
+#     "qa"   = "t2.small"
+#     "prod" = "t2.large"
+#   }
+# }
