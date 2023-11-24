@@ -1,11 +1,5 @@
 data "aws_availability_zones" "available" {}
 
-locals {
-  vpc_cidr = "10.0.0.0/16"
-  azs      = slice(data.aws_availability_zones.available.names, 0, 2)
-  name     = "vpc-dev"
-}
-
 # Create VPC terraform module
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
@@ -44,11 +38,6 @@ module "vpc" {
     Type = "database-subnet"
   }
 
-  tags = {
-    Environment = "dev"
-  }
-
-  vpc_tags = {
-    Name = local.name
-  }
+  tags     = local.common_tags
+  vpc_tags = local.common_tags
 }
