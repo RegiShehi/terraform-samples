@@ -1,6 +1,6 @@
 # Create a Null resource and Provisioners
 resource "null_resource" "name" {
-  depends_on = [module.module.ec2_public]
+  depends_on = [module.ec2_public]
 
   # Connection block for provisioners to connect to EC2 Instance
   connection {
