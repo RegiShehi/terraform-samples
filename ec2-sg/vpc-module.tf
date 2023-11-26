@@ -6,7 +6,7 @@ module "vpc" {
   version = "5.2.0"
 
   # VPC Basic Details
-  name            = local.name
+  name            = "vpc-${local.environment}"
   cidr            = local.vpc_cidr
   azs             = local.azs
   private_subnets = [for k, v in local.azs : cidrsubnet(local.vpc_cidr, 8, k)]
