@@ -5,7 +5,7 @@ module "ec2_private" {
 
   for_each = toset(["0", "1"])
 
-  name                   = "private-vm-${each.key}-${local.environment}"
+  name                   = "private-vm-${each.key + 1}-${local.environment}"
   ami                    = data.aws_ami.amzLinux2.id
   instance_type          = var.instance_type
   key_name               = var.instance_key_pair

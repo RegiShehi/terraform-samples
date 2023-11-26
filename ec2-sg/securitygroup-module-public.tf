@@ -2,7 +2,7 @@ module "public_security_group" {
   source  = "terraform-aws-modules/security-group/aws"
   version = "5.1.0"
 
-  name        = "public-security-group"
+  name        = "Public security group"
   description = "Security group with SSH port open"
   vpc_id      = module.vpc.vpc_id
 
