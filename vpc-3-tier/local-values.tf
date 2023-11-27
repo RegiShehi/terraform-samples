@@ -4,6 +4,6 @@ locals {
   environment = var.environment
   name        = "vpc-${local.environment}"
   common_tags = {
-    environment = local.environment
+    Environment = local.environment
   }
 }
