@@ -2,8 +2,8 @@ data "aws_availability_zones" "available" {}
 
 # Create VPC terraform module
 module "vpc" {
-  source  = "terraform-aws-modules/vpc/aws"
-  version = "5.2.0"
+  source = "./modules/aws-vpc"
+  # version = "5.2.0"
 
   # VPC Basic Details
   name                 = local.name
@@ -21,7 +21,7 @@ module "vpc" {
   # database_subnets                   = [for k, v in local.azs : cidrsubnet(local.vpc_cidr, 8, k + 8)]
 
   # NAT Gateways for Outbound Communications
-  enable_nat_gateway = false // true
+  # enable_nat_gateway  = true
   # single_nat_gateway = true
 
   #   VPC DNS Parameters
