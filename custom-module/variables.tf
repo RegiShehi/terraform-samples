@@ -8,12 +8,12 @@ variable "environment" {
   type        = string
 }
 
-variable "bucket_name" {
+variable "s3_bucket_name" {
   description = "S3 bucket name"
   type        = string
 }
 
-variable "tags" {
+variable "s3_tags" {
   description = "Bucket tags"
   type        = map(string)
   default     = {}
